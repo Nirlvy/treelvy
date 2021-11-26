@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\CefSharp.Common.95.7.141\build\CefSharp.Common.props" Condition="Exists('packages\CefSharp.Common.95.7.141\build\CefSharp.Common.props')" />
+  <Import Project="packages\cef.redist.x86.95.7.14\build\cef.redist.x86.props" Condition="Exists('packages\cef.redist.x86.95.7.14\build\cef.redist.x86.props')" />
+  <Import Project="packages\cef.redist.x64.95.7.14\build\cef.redist.x64.props" Condition="Exists('packages\cef.redist.x64.95.7.14\build\cef.redist.x64.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6917543-3288-4F31-B37F-5A40BAD1AF40}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>treelvy</RootNamespace>
+    <AssemblyName>treelvy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AipSdk, Version=3.6.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Baidu.AI.3.6.14\lib\net45\AipSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.IRISINGFRAMEWORKLib, Version=3.20.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AxInterop.IRISINGFRAMEWORKLib.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp, Version=95.7.141.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.95.7.141\lib\net452\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core, Version=95.7.141.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.Common.95.7.141\lib\net452\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.WinForms, Version=95.7.141.0, Culture=neutral, PublicKeyToken=40c4b6fc221f4138, processorArchitecture=MSIL">
+      <HintPath>packages\CefSharp.WinForms.95.7.141\lib\net452\CefSharp.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.8.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>packages\EPPlus.5.8.3\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.2.0.1\lib\netstandard2.0\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Asio, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Asio.2.0.0\lib\netstandard2.0\NAudio.Asio.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Core.2.0.0\lib\netstandard2.0\NAudio.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Midi, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Midi.2.0.1\lib\netstandard2.0\NAudio.Midi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.Wasapi, Version=2.0.0.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.Wasapi.2.0.0\lib\netstandard2.0\NAudio.Wasapi.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinForms, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinForms.2.0.1\lib\net472\NAudio.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio.WinMM, Version=2.0.1.0, Culture=neutral, PublicKeyToken=e279aa5131008a41, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.WinMM.2.0.1\lib\netstandard2.0\NAudio.WinMM.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TencentCloud, Version=3.0.414.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\TencentCloudSDK.3.0.414\lib\net45\TencentCloud.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <HintPath>packages\Zen.Barcode.Rendering.Framework.3.1.10729.1\lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form\chart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\chart.Designer.cs">
+      <DependentUpon>chart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\area.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\area.designer.cs">
+      <DependentUpon>area.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\combo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\combo.Designer.cs">
+      <DependentUpon>combo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\create.designer.cs">
+      <DependentUpon>create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\manager.designer.cs">
+      <DependentUpon>manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\manager_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\manager_user.designer.cs">
+      <DependentUpon>manager_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\now.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\now.designer.cs">
+      <DependentUpon>now.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\sift.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\sift.designer.cs">
+      <DependentUpon>sift.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\signin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\signin.designer.cs">
+      <DependentUpon>signin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\title.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\title.designer.cs">
+      <DependentUpon>title.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\user_manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\user_manager.designer.cs">
+      <DependentUpon>user_manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tool\common.cs" />
+    <Compile Include="Tool\DBService.cs" />
+    <Compile Include="Tool\excel.cs" />
+    <Compile Include="Tool\FPService.cs" />
+    <Compile Include="Tool\getcode.cs" />
+    <Compile Include="Tool\message_notice.cs" />
+    <Compile Include="Tool\password.cs" />
+    <Compile Include="Tool\Program.cs" />
+    <Compile Include="Tool\RecordController.cs" />
+    <Compile Include="Tool\voice.cs" />
+    <Compile Include="Tool\record.cs" />
+    <Compile Include="Web References\cn.com.webxml.www1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\chart.resx">
+      <DependentUpon>chart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\area.resx">
+      <DependentUpon>area.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\combo.resx">
+      <DependentUpon>combo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\create.resx">
+      <DependentUpon>create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\manager.resx">
+      <DependentUpon>manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\manager_user.resx">
+      <DependentUpon>manager_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\now.resx">
+      <DependentUpon>now.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\sift.resx">
+      <DependentUpon>sift.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\signin.resx">
+      <DependentUpon>signin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\title.resx">
+      <DependentUpon>title.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\user_manager.resx">
+      <DependentUpon>user_manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\cn.com.webxml.www1\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\cn.com.webxml.www1\WeatherWebService.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IRISINGFRAMEWORKLib">
+      <Guid>{775DD805-F35A-4053-A58D-E19989FA690C}</Guid>
+      <VersionMajor>3</VersionMajor>
+      <VersionMinor>20</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\02菜单_高危地区人员分析.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24gl-volumeDisable1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\24gl-volumeHigh1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\finger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\查找用户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地区 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\地区.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\开关门.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\添加用户.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.webxml.com.cn/WebServices/WeatherWebService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\cn.com.webxml.www1\</RelPath>
+      <UpdateFromURL>http://www.webxml.com.cn/WebServices/WeatherWebService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>treelvy_cn_com_webxml_www1_WeatherWebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\cn.com.webxml.www1\WeatherWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录音.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\录音 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\num.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\开关门-关-正常无底.png" />
+    <None Include="Resources\折线图.png" />
+    <None Include="Resources\表-表格_jurassic.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\cef.redist.x64.95.7.14\build\cef.redist.x64.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x64.95.7.14\build\cef.redist.x64.props'))" />
+    <Error Condition="!Exists('packages\cef.redist.x86.95.7.14\build\cef.redist.x86.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cef.redist.x86.95.7.14\build\cef.redist.x86.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.95.7.141\build\CefSharp.Common.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.95.7.141\build\CefSharp.Common.props'))" />
+    <Error Condition="!Exists('packages\CefSharp.Common.95.7.141\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.95.7.141\build\CefSharp.Common.targets'))" />
+  </Target>
+  <Import Project="packages\CefSharp.Common.95.7.141\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.95.7.141\build\CefSharp.Common.targets')" />
+</Project>
